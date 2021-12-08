@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container box materialContainer">
+    <center>
+    <div class="title">Welcome to Stay Tuned!</div></center>
+    <br><br><br><br>
+    {% comment %} <h1>Welcome</h1>
+    <p>
+        You can log in here!
+    </p>
+    <h2>Login</h2> {% endcomment %}
+    <form method="POST" action="{% url 'music_emotion' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br><br>
+        <div class="dropdown">
+            <center>
+            
+            <button class="dropbtn" >Find emotion of song</button>
+            <div class="dropdown-content container">
+                <b>Enter Song</b>
+                <input type="text" name="SongName" />
+                <div class="button login">
+                    <button type="submit"><span>Find</span> <i class="fa fa-check"></i>
+                 </div>
+            </div>
+          </div> 
+          <br><br><br><br><br>
+          </form>
+          <a href="http://127.0.0.1:5000" target="blank"><button class="dropbtn" class="dropdown">Find Songs based on Facial Expressions</button></a>
+        {% comment %} <button type="submit">Login</button> {% endcomment %}
+        {% comment %} <a href="/login" class="btn btn-primary btn-lg " tabindex="-1" role="button" aria-disabled="true">Login</a> {% endcomment %}
+        </center>
+    
+</div>
+{% endblock %}
+
+
+
+

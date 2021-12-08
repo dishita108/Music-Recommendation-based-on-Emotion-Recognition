@@ -8,3 +8,8 @@ from . import views
 # path('register/',views.signup,name='signup'),
 # path('logout/',views.logout,name='logout'),
 # ]
+
+urlpatterns = [
+    path('emotion/',views.music_emotion, name='music_emotion'),
+    #path('music_home/',views.music_home, name='music_home'),
+]

@@ -139,3 +139,6 @@ def download_playlist(id_playlist,n_songs):
     print("Music Downloaded!")
 
     return tracks,columns
+
+def recommend_tracks(id):
+    return(sp.recommendations(seed_tracks=[id],limit=1,seed_artists=None,seed_genres=None))

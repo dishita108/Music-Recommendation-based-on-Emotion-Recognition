@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block additional_styles %}
+<style>
+   body {
+    background-image: url(https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    color:white;
+   }
+
+   .text1{
+     margin-left: 10%;
+     margin-top: 5%;
+   }
+
+   a{
+     color:lightgoldenrodyellow;
+   }
+
+   table{
+     padding:2%;
+      width:90%;
+
+   }
+
+   tr{
+     margin:5px;
+     padding : 10px;
+   }
+   th{
+    margin:5px;
+     padding : 10px;
+     
+   }
+
+   table, th, td {
+  border: 1px solid white;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class=text1>
+<h1 style="color:white">Model successful</h1>
+
+Name of the song : {{name_song}}
+<br>
+Artist : {{artist}}
+<br>
+Emotion detected in song : {{emotion}}
+
+<br>
+
+{{msg}}
+<br>
+
+<a href={{lookup_playlist}} target="blank">{{lookup_playlist}}</a>
+<br><br>
+<br><br>
+
+<table>
+    <tr>
+      <th>Song Name</th>
+      <th>Artist</th>
+      <th>Album</th>
+      <th>Spotify link to the song</th>
+    </tr>
+    
+    {% for i,j,k,l in combined %}
+    <tr>
+      <td>{{ i }}</td>
+      <td>{{ k }}</td>
+      <td>{{ j }}</td>
+      <td><a href={{l}} target="blank">{{ l }}</a></td>
+    </tr>
+    {% endfor %}
+
+  </table>
+
+<br>
+<a href = "{% url 'home' %}">Find another song</a>
+</div>
+
+
+{% endblock %}

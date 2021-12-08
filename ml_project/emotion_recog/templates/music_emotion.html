@@ -1,1 +1,18 @@
 <h1>Music emotion</h1>
+
+Detect mood of the song from its title
+<form method = "POST" action="{% url 'music_emotion' %}">
+    {% csrf_token %}
+    Enter song name:
+    <br/>
+    <input type="text" name="SongName" />
+    <br/>
+    <input class ="btn btn-primary" type="submit" value= "Find Emotion" />
+    <br/>
+</form>
+
+<br>
+<br>
+
+Detect facial emotion and recommend songs<br>
+<a href="http://127.0.0.1:5000" target="blank">Click here to detect facial emotion</a>
